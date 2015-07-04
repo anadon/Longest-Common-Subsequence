@@ -1,44 +1,20 @@
-.\" Process this file with
-.\" groff -man -Tascii ruleFinder.1
+.\" Manpage for lcs
+.\" Contect jrmarsha@mtu.edu about any issues
 .\"
-.TH RULEFINDER 1 "MAY 2015" Linux "User Manuals"
+.TH "lcs" "1.0" "lcs man page"
 .SH NAME
-foo \- frobnicate the bar library
+lcs \- Longest Common Subsequence mapper
 .SH SYNOPSIS
-.B ruleFinder [-r [MATCH PATTERN] [REPLACE PATTERN]]...  
-.B [-t [NUMBER OF SEQUENCES] [TEMPLATE SEQUENCE]]... 
-.B [-i [NUMBER OF SEQUENCES] [RESULTANT SEQUENCE]]...
+.B lcs [FILE 1] [FILE 2]
 .SH DESCRIPTION
-.B ruleFinder
-Used to determine the likely rule sets of various sequence 
-transformations given input sequences and resultant sequences.
-.SH OPTIONS
-.IP -r [MATCH PATTERN] [REPLACE PATTERN]
-This is used to supply an external known rule to the data that can be
-used to determine other rules with a higher degree of accuracy with a 
-lower compute time.
-.IP -t
-Give the number of a template sequences and what that input template 
-sequence is. 
-.IP -i
-Give the number of a resultant sequences for a given sequence.
-.RS
-.SH DIAGNOSTICS
-The following diagnostics may be issued on stderr:
- 
-Bad magic number.
-.RS
-The input file does not look like an archive file.
-.RE
-Old style baz segments.
-.RS
-.B foo
-can only handle new style baz segments. COBOL
-object libraries are not supported in this version.
+lcs is a tool by which the contents of two file are analysed in order to
+determine the mapping of indexes from the first file to the second such 
+that the indexes relate to the other through pointing to the Longest
+Common Subsequence in each file.
 .SH BUGS
 No known bugs at the tieme of writing.
 .SH AUTHOR
 Josh Marshall <jrmarsha at mtu dot edu>
-.SH "SEE ALSO"
-.BR regex (1)
+.SH SEE ALSO
+.BR regex(1)
 
