@@ -25,39 +25,22 @@
 #define RULE_FINDER_H
 
 
-typedef struct intPair intPair;
-typedef struct intPairHead intPairHead;
+/***********************************************************************
+ * STRUCTURES///////////////////////////////////////////////////////////
+ * ********************************************************************/
+typedef struct point{
+	int x, y;
+}point;
 
 
-void exitWithMessage(const char* msg);
-
+typedef struct points{
+	int numPoints;
+	point *array;
+}points;
 
 /***********************************************************************
- * Using the "total" and "iterations" global values, this function runs
- * until total == iterations, updating the percent complete message to 
- * the user in 1 second intervals and provides an estimated time to 
- * completion using the following format:
- * 
- * [<PERCENT>%] Estimated time remaining: <SECONDS> seconds
+ * FUNCTIONS////////////////////////////////////////////////////////////
  * ********************************************************************/
-void *reportProgress(void *notUsed);
-
-
-void recursiveIntPairFree(intPair &toFree);
-
-
-void *recursiveFormLinksPthreadEntry(void *input);
-
-
-/***********************************************************************
- * Given an array of pairs, they need to be ordered such that each in 
- * a given level (head) cannot exist as part of another pair.  This
- * means that each pair that is considered a head if it does not have
- * both of its indexes greater than another pair.  each is then loaded 
- * with kinks which is has smaller indexes in both sequences.  When 
- * applied recursively, a subsequence hierarchy relevant graph is made.
- * ********************************************************************/
-void recursiveFormLinks(intPair &point);
 
 
 /***********************************************************************
@@ -68,9 +51,8 @@ void recursiveFormLinks(intPair &point);
  * the input sequences in complete detail.
  * 
  * ********************************************************************/
-intPair** substringMappings(const char *base, const long long baseLen, 
-														const char *other, const long long otherLen);
-
-
-
+points dynamicSolver(const char* seqOne, const int seqOneLen, 
+											const char *seqTwo, const int seqTwoLen);
+ 
+ 
 #endif

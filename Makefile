@@ -1,8 +1,8 @@
-SOURCE=ruleFinder.cpp ruleFinder.hpp
+SOURCE=ruleFinder.cpp lcs.cpp
 EXEC=lcs
-CFLAGS= -pipe -O2 -march=native -std=gnu++0x
+CFLAGS= -pipe -O2 -march=native -std=gnu++0x -std=gnu++0x
 LIBS=-lpthread
-DEBUG=-Wall -g -std=gnu++0x -pipe
+DEBUG=-Wall -g -pipe
 ##Longest Common Subsequence
 
 all: $(SOURCE)
